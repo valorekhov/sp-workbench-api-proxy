@@ -25,5 +25,8 @@
     "http-proxy-middleware": "^0.17.4",
     "request-promise": "^4.2.1",
     "xml-parser": "^1.2.1"
+  },
+  "peerDependencies": {
+    "express": "*"
   }
 }

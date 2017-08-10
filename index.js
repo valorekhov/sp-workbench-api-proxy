@@ -59,7 +59,8 @@ module.exports = function (deployConf) {
                 //passthroughCookies = true;
             }
             proxyReq.removeHeader('origin');
-            proxyReq.removeHeader('referer');
+            proxyReq.removeHeader('access-control-request-headers');
+            proxyReq.removeHeader('access-control-request-method');
         }
     }
     )
@@ -67,6 +68,16 @@ module.exports = function (deployConf) {
     const port = (deployConf.serve && deployConf.serve) || 5430;
 
     var app = express();
+    app.use(function (req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Credentials", true);
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, odata-version");
+        if (req.method === 'OPTIONS'){
+            res.status(204).end();
+        } else {
+            next();
+        }
+    }); 
     app.use(proxyRoute);
 
     try {
@@ -79,7 +90,7 @@ module.exports = function (deployConf) {
             requestCert: false,
             rejectUnauthorized: false
         }, app).listen(port);
-    } catch(e){
+    } catch (e) {
         //Presuming setup sans sp worbench;
         app.listen(port);
     }

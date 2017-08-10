@@ -1,0 +1,29 @@
+{
+  "name": "sp-workbench-api-proxy",
+  "version": "1.0.0",
+  "description": "Provides an authenticated proxy to Office 365 + SharePoint Online or an on-prem SharePoint installation. Use as a part of development with SpFx Workbench or a custom toolchain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valorekhov/sp-workbench-api-proxy.git"
+  },
+  "keywords": [
+    "SharePoint Workbench",
+    "Office 365",
+    "SharePoint Online"
+  ],
+  "author": "Val Orekhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valorekhov/sp-workbench-api-proxy/issues"
+  },
+  "homepage": "https://github.com/valorekhov/sp-workbench-api-proxy#readme",
+  "dependencies": {
+    "http-proxy-middleware": "^0.17.4",
+    "request-promise": "^4.2.1",
+    "xml-parser": "^1.2.1"
+  }
+}

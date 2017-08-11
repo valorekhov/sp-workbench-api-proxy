@@ -1,6 +1,6 @@
 {
   "name": "sp-workbench-api-proxy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides an authenticated proxy to Office 365 + SharePoint Online or an on-prem SharePoint installation. Use as a part of development with SpFx Workbench or a custom toolchain.",
   "main": "index.js",
   "scripts": {

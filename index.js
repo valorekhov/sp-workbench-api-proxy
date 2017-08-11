@@ -54,7 +54,6 @@ module.exports = function (deployConf) {
             if (passthroughCookies && req.headers && req.headers.cookie) {
                 proxyReq.setHeader('Cookie', req.headers.cookie);
             } else if (reqCookies) {
-                console.log('cookies set, enabligh session pass-through');
                 proxyReq.setHeader('Cookie', reqCookies);
                 //passthroughCookies = true;
             }
@@ -71,7 +70,7 @@ module.exports = function (deployConf) {
     app.use(function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Credentials", true);
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, odata-version");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, OData-Version, X-RequestDigest");
         if (req.method === 'OPTIONS'){
             res.status(204).end();
         } else {

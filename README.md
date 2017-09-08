@@ -38,3 +38,8 @@ gulp.task('serve2', ['serve'], function(){
 ```
 /config/sp_deploy_settings.json
 ```
+
+4. Run workbench with proxy
+```bash
+gulp serve2
+```

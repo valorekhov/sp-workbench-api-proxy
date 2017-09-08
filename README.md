@@ -2,7 +2,7 @@
 Provides an authenticated proxy to Office 365 + SharePoint Online or an on-prem SharePoint installation. Use as a part of development with SpFx Workbench or a custom toolchain.
 
 
-##Setup
+## Setup
 
 1. Install sp-workbench-api-proxy dependency
 ```bash
